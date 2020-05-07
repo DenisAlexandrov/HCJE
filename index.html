@@ -1,18 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OT</title>
+  <title>HTML/CSS/JS Effect</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <a href="#">
-  <span></span>
-  <span></span>
-  <span></span>
-  <span></span>
-  Подробнее
-  </a>
+
+  <!-- BUTTON NEON -->
+  <div class="button-neon">
+    <a href="#">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Подробнее
+    </a>
+  </div>
+  <!-- / BUTTON NEON -->
+
+  <!-- neumorphism -->
+  <div class="neumorphism">
+    <div class="neumorphism__loader">
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <!-- / neumorphism -->
+
+  <!-- liquid loader -->
+  <div class="liquid">
+    <div class="liquid__loader">
+      <span style="--i:1;"></span>
+      <span style="--i:2;"></span>
+      <span style="--i:3;"></span>
+      <span style="--i:4;"></span>
+      <span style="--i:5;"></span>
+      <span style="--i:6;"></span>
+      <span style="--i:7;"></span>
+    </div>
+    <svg class="liquid__svg">
+      <filter id="gooey">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="10" />
+        <feColorMatrix values="
+        1 0 0 0 0
+        0 1 0 0 0
+        0 0 1 0 0
+        0 0 0 20 -10
+        " />
+      </filter>
+    </svg>
+  </div>
+  <!-- / liquid loader -->
+
 </body>
+
 </html>

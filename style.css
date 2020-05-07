@@ -1,6 +1,15 @@
-body {
+* {
   margin: 0;
   padding: 0;
+  
+}
+
+/* BUTTON NEON */
+
+.button-neon {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -84,3 +93,115 @@ a:hover span:nth-child(4) {
   transition: 1s;
   transition-delay: 0.75s;
 }
+
+/* / BUTTON NEON */
+
+/* neumorphism */
+
+.neumorphism {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #240229;
+
+}
+
+.neumorphism__loader {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border: 4px solid #240229;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: -5px -5px 5px rgba(255, 255, 255, .1),
+              10px 10px 10px rgba(0, 0, 0, .4),
+              inset -5px -5px 5px rgba(255, 255, 255, .2),
+              inset 10px 10px 10px rgba(0, 0, 0, .4);
+
+}
+.neumorphism__loader::before {
+  content: "";
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  right: 25px;
+  bottom: 25px;
+  z-index: 10;
+  background: #240229;
+  border: 2px solid #240229;
+  border-radius: 50%;
+  box-shadow: inset -2px -2px 5px rgba(255, 255, 255, .2),
+              inset 3px 3px 5px rgba(0, 0, 0, .5);
+}
+.neumorphism__loader span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#14ffe9, #ffeb3b, #ff00e0);
+  filter: blur(20px);
+  animation: neumorphism 1s linear infinite;
+}
+
+@keyframes neumorphism {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+ /* / neumorphism */
+
+ /* Liquid Loader */
+
+.liquid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #010b10;
+}
+.liquid__svg {
+  width: 0;
+  height: 0;
+}
+.liquid__loader {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  filter: url(#gooey);
+}
+.liquid__loader span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  animation: liquid 4s ease-in-out infinite;
+  animation-delay: calc(0.2s * var(--i));
+}
+.liquid__loader span::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: calc(50% - 20px);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 0 0 30px #03a9f4;
+  background: linear-gradient(#fce4ec, #03a9f4);
+}
+
+@keyframes liquid {
+  0% {
+    transform: rotate(0deg);
+  }
+  50%, 100% {
+    transform: rotate(360deg);
+  }
+}
+
+ /* / Liquid Loader */
