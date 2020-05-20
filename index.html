@@ -7,6 +7,7 @@
   <title>HTML/CSS/JS Effect</title>
   <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="style.css">
 </head>
@@ -190,6 +191,15 @@
 
   <!-- /slider -->
 
+  <!-- button ripple -->
+
+  <div class="button-ripple">
+    <a class="ripple-button" href="">Button</a>
+    <a class="ripple-button" href="">Button</a>
+  </div>
+
+  <!-- /button ripple -->
+
 <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
  <script>
    var swiper = new Swiper('.swiper-container', {
@@ -210,6 +220,25 @@
      disableOnInteraction: false,
      },
    });
+ </script>
+ <script type="text/javascript">
+      const ripple = document.querySelectorAll('.ripple-button');
+        ripple.forEach(btn => {
+          btn.addEventListener('mouseenter', function(e) {
+
+            let x = e.clientX - e.target.offsetLeft;
+            let y = e.clientY - e.target.offsetTop;
+
+            let ripples = document.createElement('span');
+            ripples.style.left = x + 'px';
+            ripples.style.top = y + 'px';
+            this.appendChild(ripples);
+
+             setTimeout(() =>{
+               ripples.remove()
+             }, 1000);
+          })
+        })
  </script>
 </body>
 

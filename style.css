@@ -475,5 +475,54 @@
    width: 300px;
    height: 300px;
   background: #000;
-  -webkit-box-reflect: below 1px linear-gradient(transparent, transparent, #0006);
+  -webkit-box-reflect: below 1px linear-gradient(transparent, transparent, rgba(0,0,0, .4));
  }
+
+ /* button ripple */
+
+.button-ripple {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #040d15;
+}
+.ripple-button {
+  position: relative;
+  display: inline-block;
+  padding: 12px 36px;
+  margin: 10px;
+  color: #fff;
+  background: rgba(0,0,0, .2);
+  border-radius: 40px;
+  font-size: 18px;
+  text-decoration: none;
+  letter-spacing: 2px;
+  overflow: hidden;
+}
+.ripple-button span {
+  position: absolute;
+  background: #fff;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  border-radius: 50%;
+  animation: rippleAnima 1s linear infinite;
+}
+
+@keyframes rippleAnima {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 0.3;
+  }
+  100% {
+    width: 500px;
+    height: 500px;
+    opacity: 0;
+  }
+}
+ /* /button ripple */
